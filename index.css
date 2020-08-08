@@ -1,0 +1,13 @@
+@font-face {
+	font-family: logo;
+	src: url(assets/fonts/satisfy-regular.ttf)
+}
+
+.search-box {
+	padding: 20px 0;
+}
+
+button, .btn {
+	text-align: left !important;
+	padding: 12px 16px !important;
+}

@@ -1,0 +1,52 @@
+<!doctype HTML>
+<html lang="en">
+  <head>
+    <title>Auto correction</title>
+	<meta charset="UTF-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- linking local CSS file -->
+	<link rel="stylesheet" href="index.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style>
+	
+	</style>
+  </head>
+    <body>
+	    <div class="container">
+	       <div class="search-box">
+	         <input class="form-control" id="myInput" type="text" placeholder="Searching..." />
+		   </div>
+			
+		    <button id="myList" class="btn btn-info btn-block" data-toggle="collapse" data-target="#example">Example</button>
+       
+	       <div id="example" class="panel-collapse collapse">
+               <ul class="list-group">
+                 <li class="list-group-item">example</li>
+                 <li class="list-group-item">example</li>
+                 <li class="list-group-item">example</li>
+              </ul>
+           </div>
+       </div>
+				
+	</body>
+	<script>
+	$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+	$(".list-group li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+	</script>
+</html>
