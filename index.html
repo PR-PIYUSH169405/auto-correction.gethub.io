@@ -1,52 +1,88 @@
-<!doctype HTML>
+<!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <title>Auto correction</title>
-	<meta charset="UTF-8" /> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- linking local CSS file -->
-	<link rel="stylesheet" href="index.css">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 	<style>
 	
 	</style>
   </head>
+  
     <body>
-	    <div class="container">
-	       <div class="search-box">
-	         <input class="form-control" id="myInput" type="text" placeholder="Searching..." />
+	   <header>
+	       <div id="logo-siteName">
+		        <a href="index.html">
+		            <img id="logo" src="assets\media\auto-correction.png" alt="logo auto-correction">
+		            <span id="siteName">auto-correction</span>
+			   </a>
 		   </div>
-			
-		    <button id="myList" class="btn btn-info btn-block" data-toggle="collapse" data-target="#example">Example</button>
-       
-	       <div id="example" class="panel-collapse collapse">
-               <ul class="list-group">
-                 <li class="list-group-item">example</li>
-                 <li class="list-group-item">example</li>
-                 <li class="list-group-item">example</li>
-              </ul>
-           </div>
-       </div>
-				
+		   <nav id="nav">
+		       <div class="menu" onclick="menuFunction(this)">
+			       <div class="menu-bar bar1"></div>
+			       <div class="menu-bar bar2"></div>
+			       <div class="menu-bar bar3"></div>
+			   </div>
+		       <ul>
+			       <a href="#"><li>Notes</li></a>
+			       <a href="#"><li>Time Table</li></a>
+			       <a href="#"><li>To Do List</li></a>
+			       <a href="#"><li>About Me</li></a>
+			   </ul>
+		   </nav>
+	   </header>
+	
+	   <aside id="aside-left">
+	       <input type="text" id="search-left" placeholder="searching..." onkeyup="filterFunctionLeft()">
+	   
+	       <button class="accordion-left">Example</button>
+		   <div class="panel">
+		       <ul>
+		         <li>Example</li>
+		         <li>Example</li>
+		         <li>Example</li>
+		      </ul>
+		   </div>
+		
+		   <button class="accordion-left"></button>
+		   <div class="panel">
+		       <ul>
+		         <li></li>
+		         <li></li>
+		         <li></li>
+		       </ul>
+		   </div>
+	   </aside>
+
+       <aside id="aside-right">
+	       <input type="text" id="search-right" placeholder="searching..." onkeyup="filterFunctionRight()">
+	   
+	       <button class="accordion-right">Example</button>
+		   <div class="panel">
+		       <ul>
+		         <li>Example</li>
+		         <li>Example</li>
+		         <li>Example</li>
+		      </ul>
+		   </div>
+		
+		   <button class="accordion-right"></button>
+		   <div class="panel">
+		       <ul>
+		         <li></li>
+		         <li></li>
+		         <li></li>
+		       </ul>
+		   </div>
+	   </aside>	   
+
+		
 	</body>
+	
 	<script>
-	$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myList").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-	$(".list-group li").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
+      
 	</script>
+	
+	<script src="index.js">
+	</script>
+    
 </html>
