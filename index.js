@@ -85,9 +85,35 @@ for (i = 0; i < accRight.length; i++) {
 	 }
  }
  
+ var count = 0;
  
+ var menuCount = (function (){
+	 return function () {
+		 count += 1;
+		 return count;
+	 }
+ })();
  
  
  function menuFunction(x) {
+	 var navUl, header;
+	 
+	 nav = document.getElementById("nav");
+	 
+	 
+	 
+	 if(menuCount() % 2 == 0) {
+		 nav.style.maxHeight = null;
+	 }
+	 
+	 else {
+         nav.style.maxHeight = 	nav.scrollHeight + "px";
+	 }
+	 
+	 
 	 x.classList.toggle("change");
+	 
  }
+ 
+
+  

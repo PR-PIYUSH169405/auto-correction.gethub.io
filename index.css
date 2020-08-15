@@ -13,11 +13,14 @@ body {
 }
 
 header {
-	height: 65px;
+	height: auto;
 	width: 100%;
-	overflow: hidden;
 	background-color: #65a6bd;
 	border-radius: 4px;
+	position: static;
+	top: 0;
+	transition: max-height 30s ease-out;
+	overflow: hidden;
 }
 
 header::after {
@@ -31,8 +34,7 @@ header::after {
 	margin-left: 10px;
 	width: 48%;
 	height: auto;
-	position: relative;
-	float: left;
+	display: inline-block;
 }
 
 #logo {
@@ -55,31 +57,25 @@ header::after {
 	color: #99d746;
 }
 
-#nav {
-	float: left;
-	width: 48%;
-	position: relative;
-}
-
-#nav .menu {
+.menu {
 	width: auto;
+	float: right;
+	position: relative;
+	right: 10px;
+	top: 20px;
 	padding: 7px 5px;
     background-color: transparent;
-	float: right;
 	border: 1px solid #fff;
 	line-height: 65px;
 	border-radius: 4px;
-	position: absolute;
-	right: 0;
-	top: 20px;
 	cursor: pointer;
 }
 
-#nav .menu:active {
+.menu:active {
 	border: 1px solid #99d746;
 }
 
-#nav .menu .menu-bar {
+.menu .menu-bar {
 	width: 28px;
 	height: 3px;
 	border-radius: 35%;
@@ -102,30 +98,42 @@ header::after {
 	background-color: #99d746 !important;
 }
 
+#nav {
+	width: 100%;
+	position: relative;
+	max-height: 0;
+	border: 5px solid #65a6bd;
+	text-align: center;
+	transition: max-height 0.3s ease-out;
+	overflow: hidden;
+}
+
 #nav ul {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	line-height: 65px;
-	float: right;
-	display: none;
 }
 
 #nav ul a {
-	display: inline-block;
+	display: block;
 	padding: 10px 14px;
 	text-decoration: none;
 	color: #fff;
 	transition: 0.5s ease;
 	font-size: 17px;
 	font-family: Arial;
+	border: 1px solid;
+	border-bottom: none;
 }
 
 #nav ul a:hover {
+	padding: 0px 14px;
 	color: #99d746;
 	font-size: 25px;
-	position: relative;
 	text-shadow: -1px 10px 3px #000;
+	border-radius: 40px 40px;
+	text-align: center;
 }
 
 #aside-left, #aside-right {
@@ -203,12 +211,34 @@ header::after {
 }
 
 
-@media screen and (min-width: 600px) {
-	#nav .menu {
-		display: none;
-	}
+@media screen and (min-width: 768px) {
+
+header {
+	height: 65px;
+	overflow: hidden;
+	transition: 0.5s;
+}
 	
-	#nav ul {
-		display: block;
-	}
+.menu {
+	display: none;
+}
+	
+#nav {
+	width: 48%;
+	float: right;
+	border: none;
+	position: relative;
+	right: -50px;
+	max-height: 65px; 
+}
+
+#nav ul {
+	border: none;
+}
+
+#nav ul a {
+	display: inline-block;
+	border: none;
+}
+
 }
