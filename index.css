@@ -211,7 +211,7 @@ header::after {
 }
 
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 480px) {
 
 header {
 	height: 65px;
