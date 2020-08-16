@@ -8,7 +8,7 @@
 }
 
 body {
-	margin: 2%;
+	margin: 1% 2%;
 	font-family: arial;
 }
 
@@ -209,6 +209,7 @@ header::after {
 .panel li:nth-child(even) {
 	background-color: #999;
 }
+
 
 
 @media screen and (min-width: 480px) {
