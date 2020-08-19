@@ -107,6 +107,7 @@ header::after {
 	text-align: center;
 	transition: max-height 0.3s ease-out;
 	overflow: hidden;
+	z-index: 5;
 }
 
 #nav ul {
@@ -229,14 +230,11 @@ header::after {
 }
 
 #login-form {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	background-color: transparent;
 	border: 1px solid transparent;
 	outline: 1px solid #fff;
 	transition: all 0.2s ease-out;
+	z-index: 3;
 }
 
 #login-form:focus, #login-form:active {
@@ -452,6 +450,13 @@ header {
 
 #dictation .range-holder {
 	float: left;
+}
+
+#login-form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 }
