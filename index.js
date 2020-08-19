@@ -123,7 +123,7 @@ for (i = 0; i < accRight.length; i++) {
 	 loginForm = document.getElementById("login-form");
 	 content = document.getElementById("content");
 	 loginAlert = document.getElementById("alert");
-	 userId = "20bcs2445";
+	 userId = "20bcs19";
      userPasd = "cuchd";	 
 	 
 	 if(usdId === userId && usdPasd === userPasd) {
@@ -142,11 +142,17 @@ for (i = 0; i < accRight.length; i++) {
 	 var content = document.getElementById("content");
 	 if(content.style.display) {
 		 content.style.opacity = "0";
-	     dictation.style.height = "150px";
-	     dictation.style.padding = "10px 16px";
+		 if(window.innerWidth <= 480) {
+			 dictation.style.height = "300px";
+		 }
+		 else {
+			 dictation.style.height = "150px";
+		 }
+	     
+	     dictation.style.padding = "40px 16px 10px 16px";
 	 }
 	 else {
-		 alert("You Are Not Login It.");
+		 alert("You Are Not Login into this.");
 	 }
 	
 	 
@@ -157,6 +163,7 @@ for (i = 0; i < accRight.length; i++) {
 	 var content = document.getElementById("content");
 	 dictation.style.height = null;
 	 dictation.style.padding = null;
+	 
 	 content.style.opacity = "1";
  }
  

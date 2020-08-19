@@ -144,11 +144,12 @@ header::after {
 	border-radius: 6px;
 	color: #fff;
 	text-align: center;
-	/* display: none; */
-	height: 0;
+	height: 0px;
 	overflow: hidden;
 	transition: height 0.2s ease-out;
 	position: relative;
+	padding: 0px;
+	/* padding-top: 40px; */
 }
 
 #dictation .close {
@@ -170,13 +171,18 @@ header::after {
 #dictation .range-holder {
 	display: inline-block;
 	margin: 5px 12px;
-	text-align: center;
 	width: auto;
-	float: left;
+	/* float: left; */
+	border: 1px solid #fff;
+	padding: 3px 5px;
+	text-align: left;
+	background-color: #9a9a9a;
+	border-radius: 6px;
 }
 
 #dictation .range-holder p {
 	margin: 2px;
+    
 }
 
 #dictation .range {
@@ -193,6 +199,7 @@ header::after {
 	transition: 0.2s;
 	border-radius: 6px;
 	opacity: 0.7;
+	margin-top: 11px;
 }
 
 #dictation .range .slider:hover {
@@ -206,6 +213,19 @@ header::after {
 	background-color: #fff;
 	cursor: pointer;
 	border-radius: 6px;
+}
+
+#dictation .range .numbWord {
+	width: 100%;
+	border-radius: 4px;
+	padding: 0 5px;
+	height: 25px;
+	transition: 0.2s ease-out;
+}
+
+#dictation .range .numbWord:focus {
+	outline-color: #99d746;
+	border-color: #fff;
 }
 
 #login-form {
@@ -412,7 +432,7 @@ header {
 	float: right;
 	border: none;
 	position: relative;
-	right: -50px;
+	right: -10px;
 	max-height: 65px; 
 }
 
@@ -423,6 +443,15 @@ header {
 #nav ul a {
 	display: inline-block;
 	border: none;
+}
+
+#dictation {
+	/* height: 200px; */
+	
+}
+
+#dictation .range-holder {
+	float: left;
 }
 
 }
