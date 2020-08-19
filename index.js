@@ -142,13 +142,7 @@ for (i = 0; i < accRight.length; i++) {
 	 var content = document.getElementById("content");
 	 if(content.style.display) {
 		 content.style.opacity = "0";
-		 if(window.innerWidth <= 480) {
-			 dictation.style.height = "300px";
-		 }
-		 else {
-			 dictation.style.height = "150px";
-		 }
-	     
+	     dictation.style.height = "auto";
 	     dictation.style.padding = "40px 16px 10px 16px";
 	 }
 	 else {
