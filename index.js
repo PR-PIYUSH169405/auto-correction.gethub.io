@@ -143,7 +143,7 @@ for (i = 0; i < accRight.length; i++) {
 	 if(content.style.display) {
 		 content.style.opacity = "0";
 	     dictation.style.height = "auto";
-	     dictation.style.padding = "40px 16px 10px 16px";
+	     dictation.style.padding = "40px 16px 50px 16px";
 	 }
 	 else {
 		 alert("You Are Not Login into this.");

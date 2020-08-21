@@ -37,55 +37,82 @@
 	   
 	   
 	   <div id="dictation">
-	     <span class="close" onclick="dictationClose()">&times;</span>
+	     <span class="close" onclick="dictationClose()">&times;</span>  <!--closing the #dictation penal -->
+		 
 	     <div class="range-holder" style="padding: 14px 5px">
 		     
 			 <div class="range">
-			    <select name="" id="voiceList" class="select"></select>
+			    <select name="" id="voiceList" class="select"></select> <!-- select the voice list -->
 			 </div>
 	     </div>
 		 
 		 <div class="range-holder">
 		     <p>voice : <span class="value"></span></p>
 			 <div class="range">
-			    <input type="range" min="1" value="9" step="1" max="100" id="voice" class="slider">
+			    <input type="range" min="1" value="9" step="1" max="100" id="voice" class="slider">   <!-- making the range slide of voice -->
 			 </div>
 	     </div>
 		 
 		 <div class="range-holder">
 		     <p>volume : <span class="value"></span></p>
 			 <div class="range">
-			    <input type="range" min="0" value="1" step="0.1" max="1" id="volume" class="slider">
+			    <input type="range" min="0" value="1" step="0.1" max="1" id="volume" class="slider"> <!-- volume range slide -->
 			 </div>
 	     </div>
 		 
 		 <div class="range-holder">
 		     <p>Rate : <span class="value"></span></p>
 			 <div class="range">
-			    <input type="range" min="0.0" step="0.1" value="0.9" max="1.0" id="volume" class="slider">
+			    <input type="range" min="0.0" step="0.1" value="0.9" max="1.0" id="rate" class="slider"> <!-- rate or speed range slide -->
 			 </div>			 
 	     </div>
 		 
 		 <div class="range-holder">
 		     <p>Pitch : <span class="value"></span></p>
 			 <div class="range">
-			    <input type="range" min="0.0" step="0.1" value="0" max="2.0" id="volume" class="slider">
+			    <input type="range" min="0.0" step="0.1" value="0" max="2.0" id="pitch" class="slider"> <!-- pitch range slide -->
 			 </div>			 
 	     </div>
 		 
 		 <div class="range-holder">
 		     <p>Number of Words : <span class="value"></span></p>
 			 <div class="range">
-			    <input type="number" id="numbWord" class="numbWord" placeholder="Number of words">
+			    <input type="number" id="numbWord" class="numbWord" placeholder="Number of words"> <!-- numbers of words to be dictate -->
 			 </div>			 
 	     </div>
+		 
+		 <div class="range-holder">
+			 <div class="range">
+			    <span class="txtNumb">1.</span>
+			    <input type="text" id="txtWord" class="txtWord" placeholder="Enter the word"> <!-- word for test -->
+				<span class="playWord fas fa-volume-up"></span>
+			 </div>			 
+	     </div>
+		 
+		 <div class="bottom bottom-previous">
+		    <div class="bottomAction">
+                <button>Previous</button>			
+			</div>
+		 </div>
+		 
+		 <div class="bottom bottom-start-fnish">
+		    <div class="bottomAction">
+                <button>Start</button>			
+			</div>
+		 </div>
+		 
+		 <div class="bottom bottom-next">
+		    <div class="bottomAction">
+                <button>Next</button>			
+			</div>
+		 </div>
 		 
 	   </div>
 	   
 	   <div id="login-form">
 	     <form>
 		       <p id="alert">User Id and Password is incorrect</p>
-		       <input type="text" id="userid" placeholder="User Id">
+		       <input type="text" id="userid" placeholder="User Id">  
 		       <input type="password" id="user-pasd" placeholder="Password">
 			   <button type="button" onclick="loginFunction()">Log In</button>
 		 </form>

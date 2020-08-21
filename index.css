@@ -146,11 +146,12 @@ header::after {
 	color: #fff;
 	text-align: center;
 	height: 0px;
+	/* height: auto; */
 	overflow: hidden;
 	transition: height 0.2s ease-out;
 	position: relative;
 	padding: 0px;
-	/* padding-top: 40px; */
+	/* padding: 40px 0 50px 0; */
 }
 
 #dictation .close {
@@ -171,7 +172,7 @@ header::after {
 
 #dictation .range-holder {
 	display: inline-block;
-	margin: 5px 12px;
+	margin: 5px;
 	width: auto;
 	/* float: left; */
 	border: 1px solid #fff;
@@ -216,7 +217,7 @@ header::after {
 	border-radius: 6px;
 }
 
-#dictation .range .numbWord {
+#dictation .range .numbWord , #dictation .range .select ,#dictation .range .txtWord{
 	width: 100%;
 	border-radius: 4px;
 	padding: 0 5px;
@@ -224,9 +225,84 @@ header::after {
 	transition: 0.2s ease-out;
 }
 
-#dictation .range .numbWord:focus {
+#dictation .range .numbWord:focus , #dictation .range .select:focus, #dictation .range .txtWord:focus {
 	outline-color: #99d746;
 	border-color: #fff;
+}
+
+#dictation .range .txtWord {
+	display: inline-block;
+	width: auto;
+	margin: 2px 4px;
+	float: left;
+}
+
+#dictation .range .playWord, #dictation .range .txtNumb {
+	float: left;
+	position: relative;
+	top: 7px;
+}
+
+#dictation .range .playWord {
+	cursor: pointer;
+}
+
+#dictation .range .playWord:active {
+	color: #000;
+}
+
+#dictation .bottom-previous {
+	left: 20px;
+}
+
+#dictation .bottom-start-fnish {
+	left: 50%;
+	transform: translate(-50%);
+}
+
+#dictation .bottom-next {
+    right: 20px;	
+}
+
+#dictation .bottom  {
+	position: absolute;
+	bottom: 10px;
+	display: inline-block;
+	margin: 5px;
+	width: auto;
+	/* float: left; */
+	border: 1px solid #fff;
+	padding: 3px 5px;
+	text-align: left;
+	background-color: #9a9a9a;
+	border-radius: 6px;
+}
+
+#dictation .bottom .bottomAction {
+	width: 100%;
+	border-radius: 4px;
+	transition: 0.2s ease-out;
+}
+
+#dictation .bottom .bottomAction button {
+	height: 25px;
+	background-color: #fff;
+	color: #000;
+	transition: 0.2s ease-out;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 3px 7px;
+}
+
+#dictation .bottom .bottomAction button:focus {
+	outline-color: #99d746;
+	border-color: #fff;
+}
+
+#dictation .bottom .bottomAction button:active {
+	outline-color: #000;
+	background-color: #555;
+	color: #fff;
 }
 
 #login-form {
@@ -235,6 +311,7 @@ header::after {
 	outline: 1px solid #fff;
 	transition: all 0.2s ease-out;
 	z-index: 3;
+	/* display: none; */
 }
 
 #login-form:focus, #login-form:active {
@@ -365,7 +442,7 @@ header::after {
 	transition: all 0.2s ease;
 }
 
-.accordion-left i:hover , .accordion-right i:hover {
+.accordion-left i:active , .accordion-right i:active {
 	color: #000;
 }
 
@@ -405,6 +482,10 @@ header::after {
 	right: 20px;
 	top: 15px;
 	cursor: pointer;
+}
+
+.panel li i:active {
+	color: #fff;
 }
 
 .panel li:nth-child(even) {
