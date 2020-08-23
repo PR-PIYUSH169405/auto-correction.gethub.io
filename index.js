@@ -1,4 +1,4 @@
-var accLeft = document.getElementsByClassName("accordion-left");
+var accLeft = document.getElementsByClassName("accordion-left");  
 var accRight = document.getElementsByClassName("accordion-right");
 
 var i, panel;
@@ -85,9 +85,9 @@ for (i = 0; i < accRight.length; i++) {
 	 }
  }
  
- var count = 0;
+ var count = 0;  // menu count variable 
  
- var menuCount = (function (){
+ var menuCount = (function (){  // menu count function 
 	 return function () {
 		 count += 1;
 		 return count;
@@ -95,7 +95,7 @@ for (i = 0; i < accRight.length; i++) {
  })();
  
  
- function menuFunction(x) {
+ function menuFunction(x) {  // menu function 
 	 var navUl, header;
 	 
 	 nav = document.getElementById("nav");
@@ -116,7 +116,7 @@ for (i = 0; i < accRight.length; i++) {
  }
  
  
- function loginFunction() {
+ function loginFunction() {   // login function 
 	 var usdId, usdPasd, loginForm, content, loginAlert, userId, userPasd;
 	 usdId = document.getElementById("userid").value;
 	 usdPasd = document.getElementById("user-pasd").value;
@@ -136,14 +136,14 @@ for (i = 0; i < accRight.length; i++) {
  }
  
  
- function dictationOpen() {
+ function dictationOpen() {  // dictation open function 
 	 
 	 var dictation = document.getElementById("dictation");
 	 var content = document.getElementById("content");
 	 if(content.style.display) {
 		 content.style.opacity = "0";
-	     dictation.style.height = "auto";
-	     dictation.style.padding = "40px 16px 50px 16px";
+	     dictation.style.height = dictation.scrollHeight + "px";
+	     dictation.style.padding = "40px 0px 10px 0px";
 	 }
 	 else {
 		 alert("You Are Not Login into this.");
@@ -152,7 +152,7 @@ for (i = 0; i < accRight.length; i++) {
 	 
  }
  
- function dictationClose() {
+ function dictationClose() {  // dictation close function 
 	 var dictation = document.getElementById("dictation");
 	 var content = document.getElementById("content");
 	 dictation.style.height = null;
@@ -161,7 +161,18 @@ for (i = 0; i < accRight.length; i++) {
 	 content.style.opacity = "1";
  }
  
+
+
+
+
+
+
+
+
+
+ 
  // speech function 
+ 
  
  var voiceList = document.getElementById("voiceList");
  
@@ -171,92 +182,29 @@ for (i = 0; i < accRight.length; i++) {
  GetVoices();
  
  if(speechSynthesis !== undefined) {
-	speechSynthesis.onvoiceschanged = GetVoices;
-}
-
-/* btnSpeak.addEventListener("click" , ()=> {
-	var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
-	var selectedVoiceName = voiceList.selectedOptions[0].getAttribute("data-name");
-	voices.forEach((voice)=> {
-		if(voice.name === selectedVoiceName) {
-			toSpeak.voice = voice;
-		}
-	});
-	tts.speak(toSpeak);
-}); */
+	 speechSynthesis.onvoiceschanged = GetVoices;
+ }
  
  function GetVoices() {
 	 voices = tts.getVoices();
 	 voiceList.innerHTML = "";
 	 voices.forEach((voice)=> {
-		 var listItem = document.createElement("option");
-		 listItem.textContent = voice.name;
-		 listItem.setAttribute("data-lang", voice.lang);
-		 listItem.setAttribute("data-name", voice.lang);
-		 voiceList.appendChild(listItem);
+		var listItem = document.createElement("option");
+        listItem.textContent = voice.name;
+        listItem.setAttribute("data-lang", voice.lang);
+        listItem.setAttribute("data-name", voice.name);
+		voiceList.appendChild(listItem);
 	 });
-     voiceList.selectedIndex = 0;
+	 
+	 voiceList.selectedIndex = 0;
  }
  
- 
- 
- 
- 
- 
- var speechBtn = document.querySelectorAll(".btn i");
- 
- for(i = 0; i < speechBtn.length; i++) {
-	 speechBtn[i].addEventListener("click", function() {
-	    var mesg = this.previousElementSibling.innerHTML;
-		var msg = new SpeechSynthesisUtterance();
-	    var voices = window.speechSynthesis.getVoices();
-	    msg.voice = voices[99];
-	    msg.voiceURI = "native";
-	    msg.volume = 1;
-	    msg.rate = 1;
-	    msg.pitch = 0;
-	    msg.text = mesg;
-	    msg.lang = "en-IN";
-	    speechSynthesis.speak(msg);
-	 } )
- } 
- 
- var speechLi = document.querySelectorAll(".panel ul li i");
- 
- for(i = 0; i < speechLi.length; i++) {
-	 speechLi[i].addEventListener("click", function() {
-		var mesg = this.previousElementSibling.innerHTML;
-		var msg = new SpeechSynthesisUtterance();
-	    var voices = window.speechSynthesis.getVoices();
-	    msg.voice = voices[99];
-	    msg.voiceURI = "native";
-	    msg.volume = 1;
-	    msg.rate = 1;
-	    msg.pitch = 0;
-	    msg.text = mesg;
-	    msg.lang = "en-IN";
-	    speechSynthesis.speak(msg);
-	 })
- }
- 
- /* speechFunction() {
-	 var mesg = ;
-	 var msg = new SpeechSynthesisUtterance();
-	 var voices = window.speechSynthesis.getVoices();
-	 msg.voice = voices[9];
-	 msg.voiceURI = "native";
-	 msg.volume = 1;
-	 msg.rate = 0.9;
-	 msg.pitch = 0;
-	 msg.text = mesg;
-	 msg.lang = "en-IN";
-	 speechSynthesis.speak(msg);
- } */
- 
-var slider = document.getElementsByClassName("slider");
-var output = document.getElementsByClassName("value");
-
-for(i = 0; i < slider.length; i++) {
+var controlTTS = (function () {
+	
+	var slider = document.getElementsByClassName("slider");  
+    var output = document.getElementsByClassName("value");
+	
+	for(i = 0; i < slider.length; i++) {
 	output[i].innerHTML = slider[i].value;
 	var x;
 	slider[i].oninput = function() {
@@ -264,7 +212,109 @@ for(i = 0; i < slider.length; i++) {
 		
 		output.innerHTML = this.value;
 		
-		
 	}
 }
+	
+	startORsave = document.getElementById("startSave");
+	
+	var toSpeak = new SpeechSynthesisUtterance();
+	
+	var volume = document.getElementById("volume");
+    var rate = document.getElementById("rate");
+    var pitch = document.getElementById("pitch"); 
+	
+	var volumeCount = (function() {
+		 return function() {
+			 volume.addEventListener("input" , function () {
+				 this.value;
+			 });
+			 return volume.value;
+		 }
+	})();
+	
+	var rateCount = (function() {
+		 return function () {
+			 rate.addEventListener("input" , function () {
+				this.value; 
+			 });
+			 return rate.value;
+		 }
+	})();
+	
+	var pitchCount = (function() {
+		 return function () {
+			 pitch.addEventListener("input" , function () {
+				 this.value;
+			 });
+			 return pitch.value;
+		 }
+	})();
+	
+	function speechData() {
+		
+		var selectedVoiceName = voiceList.selectedOptions[0].getAttribute("data-name");
+        voices.forEach(function(voice) {
+            if(voice.name === selectedVoiceName) {
+			     toSpeak.voice = voice;
+		    }
+	    });	
+		
+	     toSpeak.voiceURI = "native";
+	     toSpeak.volume = volumeCount();
+	     toSpeak.rate = rateCount();
+	     toSpeak.pitch = pitchCount();
+	     toSpeak.lang = "en-IN";
+	}
+	
+	startORsave.addEventListener("click", function() {
+
+		 speechData();
+		 
+	     tts.speak(toSpeak);
+	
+	});
+	
+	var speechBtn = document.querySelectorAll(".btn i");
+	
+	for(i = 0; i < speechBtn.length; i++) {
+	    speechBtn[i].addEventListener("click", function() {
+	       var mesg = this.previousElementSibling.innerHTML;
+		
+	       toSpeak.text = mesg;
+		   
+		   speechData();
+		 
+	       tts.speak(toSpeak);
+	    
+	   });
+    }
+	
+	var speechLi = document.querySelectorAll(".panel ul li i");
+ 
+    for(i = 0; i < speechLi.length; i++) {
+	    speechLi[i].addEventListener("click", function() {
+		   var mesg = this.previousElementSibling.innerHTML;
+		
+	       toSpeak.text = mesg;
+		   
+		   speechData();
+		 
+	       tts.speak(toSpeak);
+	    });
+    }
+	
+	
+		
+ })();
+ 
+ 
+ 
+ 
+
+ 
+  
+ 
+ 
+ 
+
   

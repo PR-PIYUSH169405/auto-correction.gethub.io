@@ -151,7 +151,7 @@ header::after {
 	transition: height 0.2s ease-out;
 	position: relative;
 	padding: 0px;
-	/* padding: 40px 0 50px 0; */
+	/* padding: 40px 0px 10px 0px; */
 }
 
 #dictation .close {
@@ -251,22 +251,23 @@ header::after {
 	color: #000;
 }
 
-#dictation .bottom-previous {
-	left: 20px;
+#dictation .actionPanel {
+	width: 100%;
 }
 
-#dictation .bottom-start-fnish {
-	left: 50%;
-	transform: translate(-50%);
+#dictation .actionGroup {
+	display: block;
+	float: left;
+	width: 33.33%;
 }
 
-#dictation .bottom-next {
-    right: 20px;	
+#dictation .actionGroup::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 #dictation .bottom  {
-	position: absolute;
-	bottom: 10px;
 	display: inline-block;
 	margin: 5px;
 	width: auto;
@@ -305,6 +306,15 @@ header::after {
 	color: #fff;
 }
 
+#dictation .selectList {
+	padding: 14px 5px;
+}
+
+#dictation .hold-numbWord {
+	width: 150px;
+	height: 54px;
+}
+
 #login-form {
 	background-color: transparent;
 	border: 1px solid transparent;
@@ -335,6 +345,7 @@ header::after {
 
 #login-form form:focus, #login-form form:active {
 	border-color: #99d746;
+	background-color: #65a6bd;
 }
 
 #login-form form input {
@@ -362,6 +373,7 @@ header::after {
 #login-form form input:focus {
 	border: 1px solid #fff;
 	outline: 1px solid #fff;
+	background-color: #65a6bd;
 }
 
 #login-form form input:active {
@@ -381,6 +393,7 @@ header::after {
 
 #login-form form button:focus {
 	outline: 1px solid #fff;
+	background-color: #65a6bd;
 }
 
 #login-form form button:active {
@@ -530,7 +543,18 @@ header {
 }
 
 #dictation .range-holder {
-	float: left;
+	float: none;
+	margin: 5px 2.5%;
+}
+
+#dictation .selectList {  
+	position: relative;
+	top: -15px;
+}
+
+#dictation .hold-numbWord {
+	position: relative;
+	top: -4px;
 }
 
 #login-form {
@@ -539,5 +563,7 @@ header {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+
 
 }
